@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --azul-claro: rgb(20, 23, 91);     /* Azul claro, suave e arejado */
+    --azul-medio: rgb(70, 130, 180);      /* Azul médio, sólido e confiável */
+    --cinza-escuro: rgb(223, 216, 216);   /* Cinza escuro, neutro e elegante */
+    --cinza-claro: rgb(211, 211, 211);    /* Cinza claro, neutro e equilibrado */
+    --branco: rgb(255, 255, 255);         /* Branco, limpo e simples */
+    --fundo: var(--azul-claro);           /* Cor de fundo em azul claro */
+    --cor-texto: var(--cinza-claro);      /* Cor do texto em cinza claro */
+    --cor-principal: var(--azul-medio);   /* Cor de fundo da caixa principal em azul médio */
+    --cor-titulo: var(--cinza-escuro);    /* Cor do título em cinza escuro */
+    --cor-botao: var(--cinza-escuro);     /* Cor de fundo do botão em cinza escuro */
+    --cor-botao-hover: var(--azul-medio); /* Cor de fundo do botão ao passar o mouse em azul médio */
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.caixa-principal {
+    background-color: var(--cor-principal);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px; /* Adicionado para um visual mais suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicionado para profundidade */
+}
+
+.titulo {
+    color: var(--cor-titulo);
+    font-family: 'Georgia', serif;
+    margin: 0 0 20px 0; /* Adicionado espaçamento abaixo do título */
+}
+
+button {
+    background-color: var(--cor-botao);
+    color: var(--fundo); /* Cor do texto do botão em contraste com o fundo do botão */
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    transition: background-color 0.3s;
+    margin: 10px;
+    cursor: pointer; /* Adicionado para melhorar a usabilidade */
+}
+
+button:hover {
+    background-color: var(--cor-botao-hover);
+}
