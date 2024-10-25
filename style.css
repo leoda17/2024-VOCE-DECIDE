@@ -1,21 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jersey+10&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    box-sizing: border-box;
+}
 
 :root {
-    --fonte-principal: "Playfair Display", serif;
-    --fonte-secundaria: "Protest Strike", sans-serif;
-    --thistle: #cdb4dbff;
-    --fairy-tale: #ffc8ddff;
-    --carnation-pink: #ffafccff;
-    --uranian-blue: #bde0feff;
-    --light-sky-blue: #a2d2ffff;
+    --branco: #ffffff;
+    --azul-claro: #87CEEB;
+    --azul-escuro: #1E3A5F;
+    --laranja: #FF6F00;
+    --preto: #1C1C1C;
+    --fonte-titulo: "Jersey 10", sans-serif;
+    --fonte-texto: "Crimson Text", serif;
 }
 
-body{
-    font-family: var(--fonte-principal);
-    background-color: var(--light-sky-blue);
+body {
+    background-color: var(--azul-claro);
+    color: var(--preto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--fonte-texto);
 }
 
-h1,h3{
-    font-family: var(--fonte-secundaria);
+.caixa-principal {
+    background-color: var(--branco);
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 30px;
+    border: 3px solid var(--laranja);
+}
+
+.titulo {
+    color: var(--azul-escuro);
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--laranja);
+    color: var(--branco);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px auto;
+    width: 80%;
+}
+
+button:hover {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    transform: scale(1.05);
+}
+
+.caixa-perguntas, .caixa-alternativas, .caixa-resultado {
+    margin-top: 20px;
 }

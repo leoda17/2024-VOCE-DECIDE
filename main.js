@@ -1,3 +1,4 @@
+const caixaPrincial = document.querySelector('.caixa-principal');
 const caixaPerguntas = document.querySelector('.caixa-perguntas');
 const caixaAlternativas = document.querySelector('.caixa-alternativas');
 const caixaResultado = document.querySelector('.caixa-resultado');
@@ -5,120 +6,77 @@ const textoResultado = document.querySelector('.texto-resultado');
 
 const perguntas = [
     {
-        enunciado: "Qual é a principal função do levantador em um time de voleibol?",
+        enunciado: "Você está se preparando para um torneio importante. Qual treino você escolhe para começar?",
         alternativas: [
             {
-                texto: "Fazer pontos diretamente",
-                afirmacao: "O levantador não é responsável por fazer pontos diretamente, mas por levantar a bola para os atacantes.",
-                correta: false
+                texto: "Treino de saque para melhorar sua precisão.",
+                afirmacao: "Você foca no saque e consegue aprimorar sua técnica, ganhando confiança para o torneio."
             },
             {
-                texto: "Levantar a bola para os atacantes",
-                afirmacao: "Correto! O levantador é responsável por levantar a bola para os atacantes, facilitando a finalização dos pontos.",
-                correta: true
-            }
+                texto: "Treino de defesa para fortalecer seu posicionamento.",
+                afirmacao: "Você fortalece sua defesa, tornando-se mais ágil e preparado para receber ataques adversários."
+            },
         ]
     },
     {
-        enunciado: "Quantos jogadores cada time tem em quadra durante uma partida de voleibol?",
+        enunciado: "Durante o torneio, o adversário está forte no ataque. O que você faz?",
         alternativas: [
             {
-                texto: "6",
-                afirmacao: "Correto! Cada time tem 6 jogadores em quadra durante uma partida de voleibol.",
-                correta: true
+                texto: "Aumenta o bloqueio na rede para pressionar o atacante.",
+                afirmacao: "Seu bloqueio faz efeito, e a equipe adversária começa a cometer erros de ataque."
             },
             {
-                texto: "7",
-                afirmacao: "Incorreto. Cada time tem 6 jogadores em quadra durante uma partida de voleibol.",
-                correta: false
-            }
+                texto: "Concentra-se em melhorar a recepção para preparar contra-ataques rápidos.",
+                afirmacao: "Sua equipe melhora a recepção e aproveita contra-ataques, surpreendendo o adversário."
+            },
         ]
     },
     {
-        enunciado: "Qual é o número de sets necessários para vencer uma partida de voleibol?",
+        enunciado: "É hora de um saque importante no final do set. Qual saque você escolhe?",
         alternativas: [
             {
-                texto: "Melhor de 3 sets",
-                afirmacao: "Na maioria das competições, as partidas são decididas no formato melhor de 5 sets.",
-                correta: false
+                texto: "Saque flutuante para tentar desestabilizar a defesa adversária.",
+                afirmacao: "O saque flutuante causa dificuldade na recepção do oponente e ajuda sua equipe a ganhar o ponto decisivo."
             },
             {
-                texto: "Melhor de 5 sets",
-                afirmacao: "Correto! A maioria das partidas de voleibol é jogada no formato melhor de 5 sets.",
-                correta: true
-            }
+                texto: "Saque forte para ganhar o ponto diretamente.",
+                afirmacao: "Você arrisca um saque forte e consegue um ace, garantindo a vitória no set."
+            },
         ]
     },
     {
-        enunciado: "Qual é o nome do golpe utilizado para devolver a bola com um toque suave, geralmente com os dedos, sem ela tocar o chão?",
+        enunciado: "No último set, sua equipe está cansada. Como você motiva seus colegas?",
         alternativas: [
             {
-                texto: "Manchete",
-                afirmacao: "A manchete é usada para defender a bola com os braços estendidos, não para devolver com um toque suave.",
-                correta: false
+                texto: "Sugere uma jogada combinada para aumentar a moral e confiança.",
+                afirmacao: "A jogada combinada traz energia à equipe, e vocês conseguem recuperar a vantagem no jogo."
             },
             {
-                texto: "Toque de bola (ou 'Finger Pass')",
-                afirmacao: "Correto! O 'toque de bola' (ou 'finger pass') é o golpe usado para devolver a bola suavemente com os dedos.",
-                correta: true
-            }
+                texto: "Incentiva todos a darem o máximo e lembra da importância do trabalho em equipe.",
+                afirmacao: "Suas palavras inspiram o time, e todos se esforçam ainda mais, resultando em um desempenho sólido até o final."
+            },
         ]
     },
     {
-        enunciado: "O que é um 'ace' no voleibol?",
+        enunciado: "Sua equipe vence o torneio. Como vocês comemoram?",
         alternativas: [
             {
-                texto: "Um ponto ganho diretamente do saque",
-                afirmacao: "Correto! Um 'ace' é um ponto ganho diretamente do saque, quando a bola cai no chão sem ser tocada pelo adversário.",
-                correta: true
+                texto: "Celebram com uma reunião da equipe e planejam os próximos treinos.",
+                afirmacao: "Fim."
             },
             {
-                texto: "Um bloqueio bem-sucedido",
-                afirmacao: "Incorreto. Um 'ace' é um ponto ganho diretamente do saque, não um bloqueio.",
-                correta: false
-            }
-        ]
-    },
-    {
-        enunciado: "Qual é a altura da rede de voleibol para uma partida masculina?",
-        alternativas: [
-            {
-                texto: "2,43 metros",
-                afirmacao: "Correto! A altura da rede para o voleibol masculino é de 2,43 metros.",
-                correta: true
+                texto: "Agradecem aos torcedores e compartilham a vitória nas redes sociais.",
+                afirmacao: "Fim."
             },
-            {
-                texto: "2,24 metros",
-                afirmacao: "Incorreto. A altura da rede para o voleibol masculino é de 2,43 metros.",
-                correta: false
-            }
-        ]
-    },
-    {
-        enunciado: "Qual é a principal diferença entre o voleibol de praia e o voleibol de quadra em termos de número de jogadores?",
-        alternativas: [
-            {
-                texto: "Voleibol de praia tem 2 jogadores por time, enquanto o de quadra tem 6.",
-                afirmacao: "Correto! No voleibol de praia, cada time tem 2 jogadores, enquanto no voleibol de quadra, cada time tem 6 jogadores.",
-                correta: true
-            },
-            {
-                texto: "Ambos têm 4 jogadores por time.",
-                afirmacao: "Incorreto. No voleibol de praia, cada time tem 2 jogadores e no voleibol de quadra, cada time tem 6 jogadores.",
-                correta: false
-            }
         ]
     }
-];
+]
 
 let atual = 0;
 let perguntaAtual;
-let acertos = 0;
-let erros = 0;
-let historiaFinal = "";
-let respostasEscolhidas = [];
+let historiaFinal = '';
 
-function mostrarPerguntas() {
+function mostraPergunta() {
     if (atual >= perguntas.length) {
         mostraResultado();
         return;
@@ -126,56 +84,29 @@ function mostrarPerguntas() {
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.textContent = "";
-    mostrarAlternativas();
+    mostraAlternativas();
 }
 
-function mostrarAlternativas() {
+function mostraAlternativas() {
     for (const alternativa of perguntaAtual.alternativas) {
-        const botaoAlternativa = document.createElement("button");
-        botaoAlternativa.textContent = alternativa.texto;
-        botaoAlternativa.addEventListener("click", () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild(botaoAlternativa);
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener('click', () => respostaSelecionada(alternativa))
+        caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const correta = opcaoSelecionada.correta;
-    if (correta) {
-        acertos++;
-    } else {
-        erros++;
-    }
-    const afirmacao = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacao + " ";
-    respostasEscolhidas.push({
-        pergunta: perguntaAtual.enunciado,
-        respostaEscolhida: opcaoSelecionada.texto,
-        correta: correta
-    });
+    const afirmacoes = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacoes + " ";
     atual++;
-    mostrarPerguntas();
+    mostraPergunta();
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Fim do quiz!";
+    caixaPerguntas.textContent = "Parabéns! A Jornada do Voleibol";
+    textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
-
-    textoResultado.textContent = `Acertos: ${acertos} | Erros: ${erros}`;
-    
-    const resultadoDetalhado = document.createElement('div');
-    resultadoDetalhado.innerHTML = '<h3>Detalhes das Respostas:</h3>';
-    
-    respostasEscolhidas.forEach(resposta => {
-        const respostaElemento = document.createElement('p');
-        respostaElemento.innerHTML = `
-            <strong>Pergunta:</strong> ${resposta.pergunta}<br>
-            <strong>Resposta Escolhida:</strong> ${resposta.respostaEscolhida}<br>
-            <strong>Status:</strong> ${resposta.correta ? 'Correta' : 'Incorreta'}
-        `;
-        resultadoDetalhado.appendChild(respostaElemento);
-    });
-
-    caixaResultado.appendChild(resultadoDetalhado);
 }
 
-mostrarPerguntas();
+mostraPergunta();
